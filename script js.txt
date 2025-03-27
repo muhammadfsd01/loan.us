@@ -1,0 +1,36 @@
+// Navigation Toggle
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu ul');
+
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+
+// Hero Animation
+gsap.from('.hero h1', { opacity: 0, y: -50, duration: 1 });
+gsap.from('.hero p', { opacity: 0, y: 50, duration: 1, delay: 0.5 });
+gsap.from('.hero .cta-btn', { opacity: 0, scale: 0.8, duration: 1, delay: 1 });
+
+// Accordion
+const accordionItems = document.querySelectorAll('.accordion-item h3');
+accordionItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const content = item.nextElementSibling;
+        const isOpen = content.style.display === 'block';
+        accordionItems.forEach(i => i.nextElementSibling.style.display = 'none'); // Close all
+        content.style.display = isOpen ? 'none' : 'block'; // Toggle clicked item
+    });
+});
+
+// Testimonials Carousel
+const carouselItems = document.querySelectorAll('.carousel-item');
+let currentIndex = 0;
+
+function showNextTestimonial() {
+    carouselItems[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % carouselItems.length;
+    carouselItems[currentIndex].classList.add('active');
+}
+
+setInterval(showNextTestimonial, 3000);
+carouselItems[0].classList.add('active');

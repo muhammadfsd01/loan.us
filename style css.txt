@@ -1,0 +1,232 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo svg {
+    width: 60px;
+    height: 80px;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #ffc107;
+}
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #28a745;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.3em;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.cta-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #1e7e34;
+}
+
+.features, .testimonials, .cta {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.features h2, .testimonials h2, .cta h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #007bff;
+}
+
+.accordion {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.accordion-item h3 {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.accordion-item h3:hover {
+    background-color: #0056b3;
+}
+
+.accordion-item p {
+    display: none;
+    padding: 15px;
+    background-color: white;
+}
+
+.carousel {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.carousel-item {
+    display: none;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.carousel-item p {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer a {
+    color: #ffc107;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+        flex-wrap: wrap;
+    }
+
+    .nav-menu ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #007bff;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 20px 0;
+    }
+
+    .nav-menu ul.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hero {
+        padding: 40px 15px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1.1em;
+    }
+
+    .cta-btn {
+        padding: 10px 25px;
+        font-size: 1em;
+    }
+
+    .features, .testimonials, .cta {
+        padding: 40px 15px;
+    }
+
+    .features h2, .testimonials h2, .cta h2 {
+        font-size: 1.5em;
+    }
+
+    .accordion, .carousel {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 769px) {
+    .accordion {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .accordion-item {
+        margin: 0;
+    }
+}
